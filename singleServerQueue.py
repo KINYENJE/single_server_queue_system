@@ -106,10 +106,13 @@ def depart():
 def report():
     global total_of_delays, num_custs_delayed, area_num_in_q, sim_time, area_server_status
 
-    print("\n\nAverage delay in queue", total_of_delays / num_custs_delayed, "minutes")
-    print("Average number in queue", area_num_in_q / sim_time)
-    print("Server utilization", area_server_status / sim_time)
-    print("Time simulation ended", sim_time, "minutes")
+    average_delay_in_queue = total_of_delays / num_custs_delayed
+    
+
+    print("\n\nAverage delay in queue {:16.3f} minutes\n".format(average_delay_in_queue), file=outfile)
+    print("Average number in queue {:14.3f}\n".format(area_num_in_q / sim_time), file=outfile)
+    print("Server utilization {:19.3f}\n".format(area_server_status / sim_time), file=outfile)
+    print("Time simulation ended {:21.3f} minutes".format(sim_time), file=outfile)
 
 
 def update_time_avg_stats():
@@ -130,7 +133,7 @@ def main():
     global infile, outfile, mean_interarrival, mean_service, num_delays_required
 
     infile = open("mm1.in", "r") # Open input file for reading data from it
-    outfile = open("mm1.out", "w")
+    outfile = open("mm1.out", "w") # Open output file for writing data to it 
 
     num_events = 2
 

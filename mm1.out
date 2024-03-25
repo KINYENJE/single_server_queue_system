@@ -6,3 +6,12 @@ Mean service time           75.000 minutes
 
 Number of customers            500
 
+
+
+Average delay in queue           30.896 minutes
+
+Average number in queue          0.112
+
+Server utilization               0.280
+
+Time simulation ended            137608.529 minutes
